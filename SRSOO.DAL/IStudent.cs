@@ -6,8 +6,9 @@ using System.Text;
 namespace SRSOO.IDAL
 {
     
-    interface IPerson
+    public class StudentService
     {
-
+        private static IStudent studentDao = DataAccess.CreateStudentDAO
+        Student GetStudent(string id);
     }
 }
