@@ -11,3 +11,16 @@ F:\e\教学\系统分析与设计\第七版课件\第七版32学时\code\github\
 F:\e\教学\系统分析与设计\第七版课件\第七版32学时\code\github\assignments\SRSOO\SRSOO\SRSOO.SqlServerDAL\obj\Debug\SRSOO.SqlServerDAL.pdb
 F:\e\教学\系统分析与设计\第七版课件\第七版32学时\code\github\assignments\SRSOO\SRSOO\SRSOO.SqlServerDAL\bin\Debug\Newtonsoft.Json.dll
 F:\e\教学\系统分析与设计\第七版课件\第七版32学时\code\github\assignments\SRSOO\SRSOO\SRSOO.SqlServerDAL\bin\Debug\Newtonsoft.Json.xml
+D:\srsoo\SRSOO.SqlServerDAL\bin\Debug\SRSOO.SqlServerDAL.dll
+D:\srsoo\SRSOO.SqlServerDAL\bin\Debug\SRSOO.SqlServerDAL.pdb
+D:\srsoo\SRSOO.SqlServerDAL\bin\Debug\SRSOO.IDAL.dll
+D:\srsoo\SRSOO.SqlServerDAL\bin\Debug\SRSOO.Model.dll
+D:\srsoo\SRSOO.SqlServerDAL\bin\Debug\SRSOO.Util.dll
+D:\srsoo\SRSOO.SqlServerDAL\bin\Debug\Newtonsoft.Json.dll
+D:\srsoo\SRSOO.SqlServerDAL\bin\Debug\SRSOO.IDAL.pdb
+D:\srsoo\SRSOO.SqlServerDAL\bin\Debug\SRSOO.Model.pdb
+D:\srsoo\SRSOO.SqlServerDAL\bin\Debug\SRSOO.Util.pdb
+D:\srsoo\SRSOO.SqlServerDAL\bin\Debug\Newtonsoft.Json.xml
+D:\srsoo\SRSOO.SqlServerDAL\obj\Debug\SRSOO.SqlServerDAL.csprojResolveAssemblyReference.cache
+D:\srsoo\SRSOO.SqlServerDAL\obj\Debug\SRSOO.SqlServerDAL.dll
+D:\srsoo\SRSOO.SqlServerDAL\obj\Debug\SRSOO.SqlServerDAL.pdb
