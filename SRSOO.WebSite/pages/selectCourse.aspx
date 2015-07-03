@@ -86,10 +86,6 @@
         );
     }
 
-
-
-
-
     function moveToLeft() {
         var box1 = liger.get("listbox1"), box2 = liger.get("listbox2");
         var selecteds = box2.getSelectedItems();
