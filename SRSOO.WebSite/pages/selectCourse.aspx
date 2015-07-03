@@ -37,8 +37,9 @@
                 <p>&nbsp;&nbsp;</p>
                 <input type="button" onclick="moveToLeft()" value="<" />
                 <input type="button" onclick="moveToRight()" value=">" />
-                <input type="button" onclick="moveAllToLeft()" value="<<" />
-                <input type="button" onclick="moveAllToRight()" value=">>" />
+                <%--仅完成一次单科选择，故不显示此处--%>
+<%--                <input type="button" onclick="moveAllToLeft()" value="<<" />
+                <input type="button" onclick="moveAllToRight()" value=">>" />--%>
             </div>
             <div style="margin: 4px; float: left;">
                 <p>RegisteredFor</p>
@@ -53,7 +54,7 @@
     $(function () {
         $("#listbox1,#listbox2").ligerListBox({
             isShowCheckBox: true,
-            isMultiSelect: true,
+            isMultiSelect: false,
             width: 450,
             height: 140
         });
@@ -80,7 +81,7 @@
                 var json = $.parseJSON(reslut);
                 $.ligerui.get("ID").setValue(json.Id);
                 $.ligerui.get("StudentName").setValue(json.Name);
-                liger.get("Listbox2").setData(json.Attends);
+                liger.get("listbox2").setData(json.Attends);
             }
         );
     }
@@ -103,20 +104,21 @@
         box1.removeItems(selecteds);
         box2.addItems(selecteds);
     }
-    function moveAllToLeft() {
-        var box1 = liger.get("listbox1"), box2 = liger.get("listbox2");
-        var selecteds = box2.data;
-        if (!selecteds || !selecteds.length) return;
-        box1.addItems(selecteds);
-        box2.removeItems(selecteds);
-    }
-    function moveAllToRight() {
-        var box1 = liger.get("listbox1"), box2 = liger.get("listbox2");
-        var selecteds = box1.data;
-        if (!selecteds || !selecteds.length) return;
-        box2.addItems(selecteds);
-        box1.removeItems(selecteds);
-    }
+    //仅完成一次单科选择，故不显示此处
+    //function moveAllToLeft() {
+    //    var box1 = liger.get("listbox1"), box2 = liger.get("listbox2");
+    //    var selecteds = box2.data;
+    //    if (!selecteds || !selecteds.length) return;
+    //    box1.addItems(selecteds);
+    //    box2.removeItems(selecteds);
+    //}
+    //function moveAllToRight() {
+    //    var box1 = liger.get("listbox1"), box2 = liger.get("listbox2");
+    //    var selecteds = box1.data;
+    //    if (!selecteds || !selecteds.length) return;
+    //    box2.addItems(selecteds);
+    //    box1.removeItems(selecteds);
+    //}
 
 </script>
 </html>

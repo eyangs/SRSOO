@@ -37,3 +37,16 @@ F:\srsoo\SRSOO.SqlServerDAL\bin\Debug\SRSOO.IDAL.pdb
 F:\srsoo\SRSOO.SqlServerDAL\bin\Debug\SRSOO.Model.pdb
 F:\srsoo\SRSOO.SqlServerDAL\bin\Debug\SRSOO.Util.pdb
 F:\srsoo\SRSOO.SqlServerDAL\bin\Debug\Newtonsoft.Json.xml
+D:\work\SRSOO\SRSOO.SqlServerDAL\bin\Debug\SRSOO.SqlServerDAL.dll
+D:\work\SRSOO\SRSOO.SqlServerDAL\bin\Debug\SRSOO.SqlServerDAL.pdb
+D:\work\SRSOO\SRSOO.SqlServerDAL\bin\Debug\SRSOO.IDAL.dll
+D:\work\SRSOO\SRSOO.SqlServerDAL\bin\Debug\SRSOO.Model.dll
+D:\work\SRSOO\SRSOO.SqlServerDAL\bin\Debug\SRSOO.Util.dll
+D:\work\SRSOO\SRSOO.SqlServerDAL\bin\Debug\Newtonsoft.Json.dll
+D:\work\SRSOO\SRSOO.SqlServerDAL\bin\Debug\SRSOO.IDAL.pdb
+D:\work\SRSOO\SRSOO.SqlServerDAL\bin\Debug\SRSOO.Model.pdb
+D:\work\SRSOO\SRSOO.SqlServerDAL\bin\Debug\SRSOO.Util.pdb
+D:\work\SRSOO\SRSOO.SqlServerDAL\bin\Debug\Newtonsoft.Json.xml
+D:\work\SRSOO\SRSOO.SqlServerDAL\obj\Debug\SRSOO.SqlServerDAL.csprojResolveAssemblyReference.cache
+D:\work\SRSOO\SRSOO.SqlServerDAL\obj\Debug\SRSOO.SqlServerDAL.dll
+D:\work\SRSOO\SRSOO.SqlServerDAL\obj\Debug\SRSOO.SqlServerDAL.pdb

@@ -9,7 +9,7 @@ namespace SRSOO.BLL
     public class UserService
     {
         private static IUser userDao = DataAccess.CreateUserDAO();
-        public static User UserLogin(string userName, string passWord, out string message)
+        public static User UserLogin(string userName, string passWord,out string message)
         {
             User result = null;
             User user = userDao.GetUser(userName);

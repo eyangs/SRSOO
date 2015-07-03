@@ -28,7 +28,7 @@ namespace SRSOO.SqlServerDAL
             dr.Dispose();
             //访问数据库，获取选课信息
             var attends = new List<Section>();
-            string sql1 = @"select * from AttendSection where StudentName ='{0}'".FormatWith(id);
+            string sql1 = @"select * from AttendSection where StudentNumber ='{0}'".FormatWith(id);
             DataTable attendSec = SqlHelper.ExecuteDataset(ConStr,CommandType.Text,sql1).Tables[0];
             var secDAO=new SectionDAO();
             foreach(DataRow r in attendSec.Rows)

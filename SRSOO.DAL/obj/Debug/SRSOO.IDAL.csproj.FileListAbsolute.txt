@@ -19,3 +19,10 @@ F:\srsoo\SRSOO.DAL\bin\Debug\SRSOO.Model.pdb
 F:\srsoo\SRSOO.DAL\obj\Debug\SRSOO.IDAL.csprojResolveAssemblyReference.cache
 F:\srsoo\SRSOO.DAL\obj\Debug\SRSOO.IDAL.dll
 F:\srsoo\SRSOO.DAL\obj\Debug\SRSOO.IDAL.pdb
+D:\work\SRSOO\SRSOO.DAL\bin\Debug\SRSOO.IDAL.dll
+D:\work\SRSOO\SRSOO.DAL\bin\Debug\SRSOO.IDAL.pdb
+D:\work\SRSOO\SRSOO.DAL\bin\Debug\SRSOO.Model.dll
+D:\work\SRSOO\SRSOO.DAL\bin\Debug\SRSOO.Model.pdb
+D:\work\SRSOO\SRSOO.DAL\obj\Debug\SRSOO.IDAL.csprojResolveAssemblyReference.cache
+D:\work\SRSOO\SRSOO.DAL\obj\Debug\SRSOO.IDAL.dll
+D:\work\SRSOO\SRSOO.DAL\obj\Debug\SRSOO.IDAL.pdb
