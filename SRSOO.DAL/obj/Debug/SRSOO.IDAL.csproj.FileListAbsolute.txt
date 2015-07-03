@@ -12,3 +12,10 @@ D:\srsoo\SRSOO.DAL\bin\Debug\SRSOO.Model.pdb
 D:\srsoo\SRSOO.DAL\obj\Debug\SRSOO.IDAL.csprojResolveAssemblyReference.cache
 D:\srsoo\SRSOO.DAL\obj\Debug\SRSOO.IDAL.dll
 D:\srsoo\SRSOO.DAL\obj\Debug\SRSOO.IDAL.pdb
+F:\srsoo\SRSOO.DAL\bin\Debug\SRSOO.IDAL.dll
+F:\srsoo\SRSOO.DAL\bin\Debug\SRSOO.IDAL.pdb
+F:\srsoo\SRSOO.DAL\bin\Debug\SRSOO.Model.dll
+F:\srsoo\SRSOO.DAL\bin\Debug\SRSOO.Model.pdb
+F:\srsoo\SRSOO.DAL\obj\Debug\SRSOO.IDAL.csprojResolveAssemblyReference.cache
+F:\srsoo\SRSOO.DAL\obj\Debug\SRSOO.IDAL.dll
+F:\srsoo\SRSOO.DAL\obj\Debug\SRSOO.IDAL.pdb

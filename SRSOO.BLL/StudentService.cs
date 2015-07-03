@@ -6,7 +6,7 @@ using SRSOO.IDAL;
 
 namespace SRSOO.BLL
 {
-    class StudentService
+    public  class StudentService
     {
         private static IStudent studentDao = DataAccess.CreateStudentDAO();
         public static Student LoadStudentInfo(string id)

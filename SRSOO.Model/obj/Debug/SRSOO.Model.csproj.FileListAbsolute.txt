@@ -7,3 +7,7 @@ D:\srsoo\SRSOO.Model\bin\Debug\SRSOO.Model.pdb
 D:\srsoo\SRSOO.Model\obj\Debug\SRSOO.Model.csprojResolveAssemblyReference.cache
 D:\srsoo\SRSOO.Model\obj\Debug\SRSOO.Model.dll
 D:\srsoo\SRSOO.Model\obj\Debug\SRSOO.Model.pdb
+F:\srsoo\SRSOO.Model\bin\Debug\SRSOO.Model.dll
+F:\srsoo\SRSOO.Model\bin\Debug\SRSOO.Model.pdb
+F:\srsoo\SRSOO.Model\obj\Debug\SRSOO.Model.dll
+F:\srsoo\SRSOO.Model\obj\Debug\SRSOO.Model.pdb

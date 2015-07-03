@@ -32,5 +32,20 @@ namespace SRSOO.SqlServerDAL
             return sec;
         }
 
+
+        public void Insert(Section section)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Section GeSection(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Section GetSection(string sectionName)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

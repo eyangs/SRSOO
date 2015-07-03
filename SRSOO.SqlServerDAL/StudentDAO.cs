@@ -19,8 +19,11 @@ namespace SRSOO.SqlServerDAL
             SqlDataReader dr = SqlHelper.ExecuteReader(ConStr, CommandType.Text, sql);
             if (dr.HasRows==false) return null;
             dr.Read();
-            var stu =new Student (dr["Name"].ToString(),dr["Id"].ToString(),
-                dr["Major"].ToString(),dr["Degree"].ToString());
+            var stu =new Student (
+                dr["Name"].ToString(),
+                dr["Id"].ToString(),
+                dr["Major"].ToString(),
+                dr["Degree"].ToString());
             dr.Close();
             dr.Dispose();
             //访问数据库，获取选课信息
@@ -34,14 +37,6 @@ namespace SRSOO.SqlServerDAL
             }            
             stu.Attends=attends;
             return stu;
-        }
-
-
-
-
-        Student IStudent.GetStudent(string id)
-        {
-            throw new NotImplementedException();
         }
     }
     
