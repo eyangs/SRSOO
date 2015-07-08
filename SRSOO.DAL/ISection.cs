@@ -11,6 +11,6 @@ namespace SRSOO.IDAL
 
         Section GeSection(int id);
 
-        Section GetSection(string sectionName);
+       
     }  
 }
