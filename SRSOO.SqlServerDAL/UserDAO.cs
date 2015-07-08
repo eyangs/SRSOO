@@ -15,7 +15,7 @@ namespace SRSOO.SqlServerDAL
     {
         public static string ConStr
         {
-            get { return @"Data Source=.\SQLEXPRESS2008;Initial Catalog=SRSDB;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=False"; }
+            get { return @"Data Source=(localdb)\Projects;Initial Catalog=SRSDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False"; }
         }
 
         public static SqlConnection Connection
@@ -48,6 +48,8 @@ namespace SRSOO.SqlServerDAL
             User user = new User();
             user.UserName = dr["UserName"].ToString();
             user.PassWord = dr["Password"].ToString();
+            user.RelatedPerson = dr["RelatedPerson"].ToString();
+            user.RelatedPersonType = dr["RelatedPersonType"].ToString();
             dr.Close();
             dr.Dispose();
             return user;

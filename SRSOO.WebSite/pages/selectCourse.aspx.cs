@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using SRSOO.BLL;
 using SRSOO.Util;
 using SRSOO.Util.Extension;
-public partial class pages_selectCourse : WebBasePage
+public partial class pages_selectCourse : WebBasePage//所有的UI类集成一个基类WebBasePage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -25,5 +25,32 @@ public partial class pages_selectCourse : WebBasePage
             Response.Write(jsonResult);
             Response.End();
         }
+        else if (Request.Params["Action"].ConvertToString() == "LoadStudentInfo")
+        {
+            //User     u = Session["CurrentUser"] as User;
+            var stu = StudentService.LoadStudentInfo(CurrentUser.RelatedPerson);
+            //生成  ViewModel
+            //匿名对象new{},不能直接去序列化stu。由student影响到ID 上，
+            var q = from s in stu.Attends
+                    select new
+                    {
+                        id = s.SectionNumber ,
+                        text= "{0} {1}".FormatWith(s.RepresentedCourse.CourseName,s.TimeOfDay,s.Room)
+                    };
+
+            var stuView = new{
+                Id = stu.Id,
+                Name = stu.Name,
+                //Attends = stu.Attends
+                Attends = q.ToList()
+            };
+
+
+            string jsonResult = JSONHelper.ToJson(stuView);
+
+            Response.Write(jsonResult);
+            Response.End();
+        }
+
     }
 }
