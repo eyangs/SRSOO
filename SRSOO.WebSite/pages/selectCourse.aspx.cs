@@ -15,15 +15,31 @@ public partial class pages_selectCourse : WebBasePage
         {
             var schedule = ScheduleService.LoadSchedule("SP2009");
             var q = from item in schedule.GetSortedSections()
-                select new
-                {
-                    id = item.RepresentedCourse.CourseNumber,
-                    text = "{0} {1} {2}".FormatWith(item.RepresentedCourse.CourseName, item.TimeOfDay,item.Room)
-                };
+                    select new
+                    {
+                        id = item.RepresentedCourse.CourseNumber,
+                        text = "{0} {1} {2}".FormatWith(item.RepresentedCourse.CourseName, item.TimeOfDay, item.Room)
+                    };
             string jsonResult = JSONHelper.ToJson(q.ToList());
 
             Response.Write(jsonResult);
             Response.End();
+        }
+        else if (Request.Params["Action"].ConvertToString() == "LoadSchedule")
+        {
+            var stu = StudentService.LoadStudentInfo(CurrentUser.RelatedPerson);
+            //生成ViewModel
+            //匿名对象new{}
+            var stuView = new
+            {
+                Id = stu.Id,
+                Name = stu.Name,
+                Attends = stu.Attends
+            };
+            string jsonREsult = JSONHelper.ToJson(stuView);
+            Response.Write(jsonREsult);
+            Response.End();
+
         }
     }
 }

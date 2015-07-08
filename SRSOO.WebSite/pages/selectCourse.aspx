@@ -68,32 +68,39 @@
             }
         );
     }    //从服务器加载当前登陆学生已选课程    function loadResigistion() {
-    }    function moveToLeft() {
-        var box1 = liger.get("listbox1"), box2 = liger.get("listbox2");
-        var selecteds = box2.getSelectedItems();
-        if (!selecteds || !selecteds.length) return;
-        box2.removeItems(selecteds);
-        box1.addItems(selecteds);
-    }
-    function moveToRight() {
-        var box1 = liger.get("listbox1"), box2 = liger.get("listbox2");
-        var selecteds = box1.getSelectedItems();
-        if (!selecteds || !selecteds.length) return;
-        box1.removeItems(selecteds);
-        box2.addItems(selecteds);
-    }
-    function moveAllToLeft() {
-        var box1 = liger.get("listbox1"), box2 = liger.get("listbox2");
-        var selecteds = box2.data;
-        if (!selecteds || !selecteds.length) return;
-        box1.addItems(selecteds);
-        box2.removeItems(selecteds);
-    }
-    function moveAllToRight() {
-        var box1 = liger.get("listbox1"), box2 = liger.get("listbox2");
-        var selecteds = box1.data;
-        if (!selecteds || !selecteds.length) return;
-        box2.addItems(selecteds);
-        box1.removeItems(selecteds);
-    }</script>
+    }    //load Info JSON数据    function loadStudentInfo() {
+        $.post(
+            "selectCourse.aspx?Action=LoadStudentInfo",
+            function (reslut) {
+                var json = $.parseJSON(result);
+                $.ligerui.get("ID").setValue(json.Id);
+                $.ligerui.get("StudentName").setData(json.Attends);           
+            }            );        function moveToLeft() {
+            var box1 = liger.get("listbox1"), box2 = liger.get("listbox2");
+            var selecteds = box2.getSelectedItems();
+            if (!selecteds || !selecteds.length) return;
+            box2.removeItems(selecteds);
+            box1.addItems(selecteds);
+        }
+        function moveToRight() {
+            var box1 = liger.get("listbox1"), box2 = liger.get("listbox2");
+            var selecteds = box1.getSelectedItems();
+            if (!selecteds || !selecteds.length) return;
+            box1.removeItems(selecteds);
+            box2.addItems(selecteds);
+        }
+        function moveAllToLeft() {
+            var box1 = liger.get("listbox1"), box2 = liger.get("listbox2");
+            var selecteds = box2.data;
+            if (!selecteds || !selecteds.length) return;
+            box1.addItems(selecteds);
+            box2.removeItems(selecteds);
+        }
+        function moveAllToRight() {
+            var box1 = liger.get("listbox1"), box2 = liger.get("listbox2");
+            var selecteds = box1.data;
+            if (!selecteds || !selecteds.length) return;
+            box2.addItems(selecteds);
+            box1.removeItems(selecteds);
+        }    }</script>
 </html>
