@@ -5,3 +5,6 @@ f:\e\教学\系统分析与设计\第七版课件\第七版32学时\code\github\
 f:\e\教学\系统分析与设计\第七版课件\第七版32学时\code\github\assignments\SRSOO\SRSOO\SRSOO.DAL\bin\Debug\SRSOO.Model.pdb
 f:\e\教学\系统分析与设计\第七版课件\第七版32学时\code\github\assignments\SRSOO\SRSOO\SRSOO.DAL\obj\Debug\SRSOO.IDAL.dll
 f:\e\教学\系统分析与设计\第七版课件\第七版32学时\code\github\assignments\SRSOO\SRSOO\SRSOO.DAL\obj\Debug\SRSOO.IDAL.pdb
+F:\wwwwwwwwwwwww\SRSOO\SRSOO.DAL\obj\Debug\SRSOO.IDAL.csprojResolveAssemblyReference.cache
+F:\wwwwwwwwwwwww\SRSOO\SRSOO.DAL\obj\Debug\SRSOO.IDAL.dll
+F:\wwwwwwwwwwwww\SRSOO\SRSOO.DAL\obj\Debug\SRSOO.IDAL.pdb

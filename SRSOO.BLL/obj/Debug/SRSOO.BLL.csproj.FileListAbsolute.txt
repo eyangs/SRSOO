@@ -13,3 +13,6 @@ F:\e\教学\系统分析与设计\第七版课件\第七版32学时\code\github\
 F:\e\教学\系统分析与设计\第七版课件\第七版32学时\code\github\assignments\SRSOO\SRSOO\SRSOO.BLL\bin\Debug\Newtonsoft.Json.xml
 F:\e\教学\系统分析与设计\第七版课件\第七版32学时\code\github\assignments\SRSOO\SRSOO\SRSOO.BLL\bin\Debug\SRSOO.SqlServerDAL.dll
 F:\e\教学\系统分析与设计\第七版课件\第七版32学时\code\github\assignments\SRSOO\SRSOO\SRSOO.BLL\bin\Debug\SRSOO.SqlServerDAL.pdb
+F:\wwwwwwwwwwwww\SRSOO\SRSOO.BLL\obj\Debug\SRSOO.BLL.csprojResolveAssemblyReference.cache
+F:\wwwwwwwwwwwww\SRSOO\SRSOO.BLL\obj\Debug\SRSOO.BLL.dll
+F:\wwwwwwwwwwwww\SRSOO\SRSOO.BLL\obj\Debug\SRSOO.BLL.pdb

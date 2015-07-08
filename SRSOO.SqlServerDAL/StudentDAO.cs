@@ -11,12 +11,12 @@ using SRSOO.Util.Extension;
 namespace SRSOO.SqlServerDAL
 {
     
-    public class StudentDAO:DataBase,IStudent
+    public class StudentDAO : DataBase,IStudent
     {
-        public student Getstudent(string id)
+        public Student Getstudent(string id)
         {
             string sql = "select * from Student where id='{0}'".FormatWith(id);
-            SqlDataAdapter dr = SqlHelper.ExecuteReader(ConStr,CommandType.Text,)
+            SqlDataAdapter dr = SqlHelper.ExecuteReader(ConStr, CommandType.Text, sql);
             if (dr.HasRows == false) return null;
             dr.Read();
             var stu = new Student(dr["Name"].ToString(),dr["Id"].ToString(),
@@ -25,10 +25,10 @@ namespace SRSOO.SqlServerDAL
             dr.Dispose();
             //访问数据库，获取选课信息
             var attends = new List<Section>();
-            string sql = @"select * from AttendSection where StudentNumber='{0}'".FormatWith(id);
-            DataTable attedsSec = SqlHelper.ExecuteDataset(ConStr,CommandType.Text,sql1).Tables[0];
+            string sql1 = @"select * from AttendSection where StudentNumber='{0}'".FormatWith(id);
+            DataTable attendSec = SqlHelper.ExecuteDataset(ConStr,CommandType.Text,sql1).Tables[0];
             var secDao = new SectionDAO();
-            foreach (var r in attendSec.Rows)
+            foreach (DataRow r in attendSec.Rows)
             {
                 attends.Add(secDao.GetSection(r["SectionNumber"].ConvertToIntBaseZero()));
             }
@@ -36,40 +36,9 @@ namespace SRSOO.SqlServerDAL
             //访问数据库把成绩单读过来
             return stu;
         }
-
-        public static SqlConnection Connection
-        {
-            get { return new SqlConnection(ConStr);}
-        }
-    }
+     }
     
     
     
-    public class UserDAO: DataBase, IUser
-    {
-        public void Insert(User user)
-        {
-            throw new NotImplementedException();
-            
-        }
-
-        public User GetUser(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public User GetUser(string userName)
-        {
-            string sql = "select * from [User] where UserName='{0}'".FormatWith(userName.Trim());
-            SqlDataReader dr = SqlHelper.ExecuteReader(ConStr, CommandType.Text, sql);
-            if (dr.HasRows == false) return null;
-            dr.Read();
-            User user = new User();
-            user.UserName = dr["UserName"].ToString();
-            user.PassWord = dr["Password"].ToString();
-            dr.Close();
-            dr.Dispose();
-            return user;
-        }
-    }
+   
 }

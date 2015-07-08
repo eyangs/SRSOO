@@ -11,15 +11,41 @@ using SRSOO.Util.Extension;
 namespace SRSOO.SqlServerDAL
 {
     
-    public class SectionDAO:DataBase,ISection
+   public class SectionDAO:DataBase,ISection
     {
-        public Section GetSection(int Id)
+        public Section GetSection(int sectionNumber)
         {
             //应该从数据库读取section数据
-            //var Course
-            return new Section(1, "M", "8:10-10:00 PM", null, "GOVT101", 30);
+            string sql = "select * from Section where SectionNumber={0}".FormatWith(sectionNumber);
+            SqlDataReader dr = SqlHelper.ExecuteReader(ConStr, CommandType.Text, sql);
+            if (dr.HasRows == false) return null;
+            dr.Read();
+            var CourseDao = new CourseDao();
+            var sec = new Section(dr["SectionNumber"].ConvertToIntBaseZero(),
+                                  dr["DayOfWeek"].ToString(),
+                                  dr["TimeOfDay"].ToString(),
+                                  courseDao.GetCourse(dr["RepresentedCourse"].ConvertToString()),
+                                  dr["Room"].ToString(),
+                                  dr["Capacity"].ConvertToIntBaseZero());
+            dr.Close();
+            dr.Dispose();
+
+            return sec;
+        }
+        public void Insert(Section section)
+        {
+            throw new NotImplementedException();
         }
 
+        public Section GeSection(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Section GetSection(string sectionName)
+        {
+            throw new NotImplementedException();
+        }
        
     }
 }

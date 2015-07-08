@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using SRSOO.IDAL;
 
 namespace SRSOO.BLL
 {
-    Public class StudentService
+    public class StudentService
     {
-        private static Istudent studentDao=DataAccess.CreateStudentDAO();
+        private static IStudent studentDao = DataAccess.CreateStudentDAO();
         public static Student LoadStudentInfo(string id)
         {
             return studentDao.GetStudent(id);
