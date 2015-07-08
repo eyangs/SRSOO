@@ -8,6 +8,5 @@ F:\wwwwwwwwwwwww\SRSOO\SRSOO.Util\bin\Debug\SRSOO.Util.dll
 F:\wwwwwwwwwwwww\SRSOO\SRSOO.Util\bin\Debug\SRSOO.Util.pdb
 F:\wwwwwwwwwwwww\SRSOO\SRSOO.Util\bin\Debug\Newtonsoft.Json.dll
 F:\wwwwwwwwwwwww\SRSOO\SRSOO.Util\bin\Debug\Newtonsoft.Json.xml
-F:\wwwwwwwwwwwww\SRSOO\SRSOO.Util\obj\Debug\SRSOO.Util.csprojResolveAssemblyReference.cache
 F:\wwwwwwwwwwwww\SRSOO\SRSOO.Util\obj\Debug\SRSOO.Util.dll
 F:\wwwwwwwwwwwww\SRSOO\SRSOO.Util\obj\Debug\SRSOO.Util.pdb
