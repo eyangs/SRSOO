@@ -31,9 +31,16 @@ public partial class pages_selectCourse : WebBasePage//基类
             var stu = StudentService.LoadStudentInfo(CurrentUser.RelatedPerson);
             //生成viewModel
             //匿名对象new{}
+            var q = from s in stu.Attends
+                    select new
+                    {
+                        id = s.SectionNumber,
+                        text = "{0} {1}".FormatWith(s.RepresentedCourse.CourseName, s.TimeOfDay, s.Room)
+                    };
             var stuView = new {
                 Id = stu.Id,
-                Name = stu.Attends
+                Name = stu.Name,
+                Attends=q.ToList()
             };
             string jsonRsult=JSONHelper.ToJson(stuView);
             Response.Write(jsonRsult);
