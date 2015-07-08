@@ -15,7 +15,7 @@ namespace SRSOO.SqlServerDAL
     {
         public static string ConStr
         {
-            get { return @"Data Source=.\SQLEXPRESS2008;Initial Catalog=SRSDB;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=False"; }
+            get { return @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\nihan\Desktop\SRSOO-master\database\sqlserver\SRSDB.mdf;Integrated Security=True;Connect Timeout=30"; }
         }
 
         public static SqlConnection Connection
