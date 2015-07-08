@@ -23,8 +23,8 @@
 </head>
 <body>
     <form id="form1" class="liger-form" data-validate="{}">
-        <div class="fields">
-            <input data-type="text" data-label="StudentName" data-name="StudentName" validate="{required:true,minlength:5}" />
+        <div class="fields" >
+            <input id="Student_Name" data-type="text" type="text" data-label="StudentName" data-name="StudentName" validate="{required:true,minlength:5}" />
             <input data-type="text" data-label="ID Number" data-name="ID" validate="{required:true}" />
             <input data-type="text" data-label="Total Course" data-name="TotalCourse" validate="{required:false}" />
         </div>
@@ -58,17 +58,44 @@
         });
 
         loadSchedule();
-    });    //从服务器加载选课列表    function loadSchedule() {
+        loadStudentInfo();
+    });
+    //从服务器加载选课列表
+    function loadSchedule() {
         $.post(
             "selectCourse.aspx?Action=LoadSchedule",
             function (reslut) {
                 var json = $.parseJSON(reslut);
                 liger.get("listbox1").setData(json);
-                
+
             }
         );
-    }    //从服务器加载当前登陆学生已选课程    function loadResigistion() {
-    }    function moveToLeft() {
+    }
+    //从服务器加载当前登陆学生已选课程
+    function loadResigistion() {
+
+
+    }
+    function loadStudentInfo() {
+        
+        $.post(
+            "SelectCourse.aspx?Action=loadStudentInfo",
+           function (reslut) {
+               
+               var json = $.parseJSON(reslut);
+               $.ligerui.g("ID").setValue(json.Id);
+               $.ligerui.g("StudentName").setValue(json.Name);
+               
+               liger.get("listbox2").setData(json.Attends);
+           }
+
+
+            );
+
+
+
+    }
+    function moveToLeft() {
         var box1 = liger.get("listbox1"), box2 = liger.get("listbox2");
         var selecteds = box2.getSelectedItems();
         if (!selecteds || !selecteds.length) return;
@@ -95,5 +122,9 @@
         if (!selecteds || !selecteds.length) return;
         box2.addItems(selecteds);
         box1.removeItems(selecteds);
-    }</script>
+    }
+
+
+
+</script>
 </html>
