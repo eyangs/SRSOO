@@ -15,5 +15,4 @@ namespace SRSOO.BLL
             return scheduleDao.GetScheduleOfClasses(semester);
         }
     }
-    //测试
 }
