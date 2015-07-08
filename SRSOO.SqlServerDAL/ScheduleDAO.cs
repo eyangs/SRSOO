@@ -13,7 +13,7 @@ using SRSOO.Util.Extension;
 
 namespace SRSOO.SqlServerDAL
 {
-    public class ScheduleDAO : DataBase, ISchedule
+    class ScheduleDAO : DataBase, ISchedule
     {
         /// <summary>
         /// 此处为了省事，没有连接数据库，直接读文件
@@ -60,7 +60,7 @@ namespace SRSOO.SqlServerDAL
                     int capacity = Convert.ToInt32(capacityValue);
 
                     // Look up the Course object in the Course Catalog.
-                    var courseDao = new CousrseDAO(); 
+                    var courseDao = new CourseDAO();
                     Course c = courseDao.GetCourse(courseNumber);
                     courseDao.GetPreRequisites(c);
                     // Schedule the Section and add it to the Dictionary.

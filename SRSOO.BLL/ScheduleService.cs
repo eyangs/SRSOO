@@ -9,7 +9,7 @@ namespace SRSOO.BLL
     public class ScheduleService
     {
 
-       private static ISchedule scheduleDao = DataAccess.CreateScheduleDAO();
+        private static ISchedule scheduleDao = DataAccess.CreateScheduleDAO();
         public static ScheduleOfClasses LoadSchedule(string semester)
         {
             return scheduleDao.GetScheduleOfClasses(semester);
