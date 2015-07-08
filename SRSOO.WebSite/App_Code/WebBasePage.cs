@@ -11,7 +11,17 @@ public class WebBasePage: System.Web.UI.Page
     {
         get
         {
-            return Session["CurrentUser"] as User;
+            if(Session["CurrentUser"]==null)
+            {
+                //转到登录
+                Response.Redirect("../Login.aspx");
+                return null;
+            }
+            else
+            {
+                return Session["CurrentUser"] as User;
+            }
+            
         }
     }
 }
