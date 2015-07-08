@@ -14,7 +14,17 @@ using SRSOO.Util.Extension;
 namespace SRSOO.SqlServerDAL
 {
     public class StudentDAO : DataBase, IStudent
-    {
+    {   
+        public static string ConStr
+        {
+            get { return @"Data Source=(LocalDB)\v11.0;AttachDbFilename=I:\SRSOO\SRSOO.SqliteDAL\database\SRSDB.mdf;Integrated Security=True"; }
+        }
+
+        public static SqlConnection Connection
+        {
+            get { return new SqlConnection(ConStr); }
+        }
+
         public Student GetStudent(string id)
         {
             string sql = "select * from Student where id='{0}'".FormatWith(id);

@@ -31,5 +31,10 @@ namespace SRSOO.IDAL
             string className = AssemblyName + "." + "StudentDAO";
             return (IStudent)Assembly.Load(AssemblyName).CreateInstance(className);
         }
+         public static ISection CreateSectionDAO()
+        {
+            string className = AssemblyName + "." + "SectionDAO";
+            return (ISection)Assembly.Load(AssemblyName).CreateInstance(className);
+        }
     }
 }
