@@ -9,7 +9,7 @@ namespace SRSOO.IDAL
     {
         void Insert(Section section);
 
-        Section GeSection(int id);
+        Section GetSection(int id);
 
         Section GetSection(string sectionName);
     }  

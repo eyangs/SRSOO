@@ -21,6 +21,7 @@ public partial class Login : System.Web.UI.Page
             User user = UserService.UserLogin(userName, password, out message);
             if (user!=null)
             {
+                //登陆完后，可以从section取出来
                 Session["CurrentUser"] = user;
                 jsonResult = JSONHelper.GetJsonForSuccess();
             }
@@ -33,4 +34,4 @@ public partial class Login : System.Web.UI.Page
         }
     }
    
-}
+ } 
