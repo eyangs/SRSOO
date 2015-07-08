@@ -6,8 +6,8 @@ using System.Text;
 namespace SRSOO.IDAL
 {
     
-    interface IPerson
+    public interface IPerson
     {
-
+        Student GetStudent(string id);
     }
 }
