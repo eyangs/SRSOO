@@ -4,15 +4,16 @@ using System.Linq;
 using System.Text;
 using SRSOO.IDAL;
 
+
 namespace SRSOO.BLL
 {
-    public class ScheduleService
+    public class StudentService
     {
-
-       private static ISchedule scheduleDao = DataAccess.CreateScheduleDAO();
-        public static ScheduleOfClasses LoadSchedule(string semester)
+        private static IStudent studentDao = DataAccess.CreateStudentDAO();
+        public static Student LoadStudentInfo(string id)
         {
-            return scheduleDao.GetScheduleOfClasses(semester);
+            return studentDao.GetStudent(id);
         }
+
     }
 }
