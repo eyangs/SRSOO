@@ -13,10 +13,10 @@ namespace SRSOO.SqlServerDAL
     
     public class StudentDAO : DataBase,IStudent
     {
-        public Student Getstudent(string id)
+        public Student GetStudent(string id)
         {
             string sql = "select * from Student where id='{0}'".FormatWith(id);
-            SqlDataAdapter dr = SqlHelper.ExecuteReader(ConStr, CommandType.Text, sql);
+            SqlDataReader dr = SqlHelper.ExecuteReader(ConStr, CommandType.Text, sql);
             if (dr.HasRows == false) return null;
             dr.Read();
             var stu = new Student(dr["Name"].ToString(),dr["Id"].ToString(),

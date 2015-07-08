@@ -67,8 +67,17 @@
                 
             }
         );
-    }    //从服务器加载当前登陆学生已选课程    function loadResigistion() {
-    }    /*    fuction loadStudentInfo(){      $.post(         "selectCourse.aspx?Action=LoadStudentInfo",         function(result){             var json = $.parseJSON(result);             $.ligerui.get("ID").setValue(json.ID);             $.ligerui.get("StudentName").setValue(json.Name);             liger.get("listbox2").setData(json.Attends);     } );}    */    function moveToLeft() {
+    }    //从服务器加载当前登陆学生已选课程    function LoadStudentInfo() {
+        $.post(
+            "selectCourse.aspx?Action=LoadStudentInfo",
+            function (reslut) {
+                var json = $.parseJSON(reslut);
+                $.ligerui.get("ID").setValue(json.Id);
+                $.ligerui.get("StudentName").setValue(json.Name);
+                liger.get("listbox2").setData(json.Attends);
+            }
+        );
+    }       function moveToLeft() {
         var box1 = liger.get("listbox1"), box2 = liger.get("listbox2");
         var selecteds = box2.getSelectedItems();
         if (!selecteds || !selecteds.length) return;
@@ -82,6 +91,7 @@
         box1.removeItems(selecteds);
         box2.addItems(selecteds);
     }
+    /*
     function moveAllToLeft() {
         var box1 = liger.get("listbox1"), box2 = liger.get("listbox2");
         var selecteds = box2.data;
@@ -95,5 +105,5 @@
         if (!selecteds || !selecteds.length) return;
         box2.addItems(selecteds);
         box1.removeItems(selecteds);
-    }</script>
+    }    */</script>
 </html>

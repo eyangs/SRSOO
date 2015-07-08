@@ -20,7 +20,7 @@ namespace SRSOO.SqlServerDAL
             SqlDataReader dr = SqlHelper.ExecuteReader(ConStr, CommandType.Text, sql);
             if (dr.HasRows == false) return null;
             dr.Read();
-            var CourseDao = new CourseDao();
+            var courseDao = new CousrseDAO();
             var sec = new Section(dr["SectionNumber"].ConvertToIntBaseZero(),
                                   dr["DayOfWeek"].ToString(),
                                   dr["TimeOfDay"].ToString(),
