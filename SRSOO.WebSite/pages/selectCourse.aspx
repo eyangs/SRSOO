@@ -12,7 +12,7 @@
 
     <script src="../sciript/jquery-validation/jquery.validate.min.js"></script>
     <script src="../sciript/jquery-validation/jquery.metadata.js"></script>
-    <script src="../sciript/jquery-validation/messages_cn.js"></script>
+    <script src="../sciript/jquery-validation/messages_cn.js"></script>   
     <style type="text/css">
         .middle input {
             display: block;
@@ -24,9 +24,10 @@
 <body>
     <form id="form1" class="liger-form" data-validate="{}">
         <div class="fields">
-            <input data-type="text" data-label="StudentName" data-name="StudentName" validate="{required:true,minlength:5}" />
-            <input data-type="text" data-label="ID Number" data-name="ID" validate="{required:true}" />
-            <input data-type="text" data-label="Total Course" data-name="TotalCourse" validate="{required:false}" />
+            <input id="StudentName" data-label="StudentName" data-name="StudentName" validate="{required:true,minlength:5}" />
+"          
+            <input id="ID Number" data-type="text" data-label="ID Number" data-name="ID" validate="{required:true}" />
+            <input id="Total Course" data-type="text" data-label="Total Course" data-name="TotalCourse" validate="{required:false}" />
         </div>
         <div>
             <div style="margin: 4px; float: left;">
@@ -58,17 +59,35 @@
         });
 
         loadSchedule();
-    });    //从服务器加载选课列表    function loadSchedule() {
+        loadStudentInfo();
+    });
+    //从服务器加载选课列表
+    function loadSchedule() {
         $.post(
             "selectCourse.aspx?Action=LoadSchedule",
             function (reslut) {
                 var json = $.parseJSON(reslut);
+                $.ligerui.get()
                 liger.get("listbox1").setData(json);
-                
+
             }
         );
-    }    //从服务器加载当前登陆学生已选课程    function loadResigistion() {
-    }    function moveToLeft() {
+    }
+    //从服务器加载当前登陆学生已选课程
+    function loadStudentInfo() {
+
+        $.post(
+            "selectCourse.aspx?Action=LoadStudentInfo",
+            function (reslut) {
+                var json = $.parseJSON(reslut);
+                $.ligerui.get("ID").setValue(json.Id);
+                $.ligerui.get("StudentName").setValue(json.Name);
+                liger.get("listbox2").setData(json.attends);
+            }
+            );
+
+    }
+    function moveToLeft() {
         var box1 = liger.get("listbox1"), box2 = liger.get("listbox2");
         var selecteds = box2.getSelectedItems();
         if (!selecteds || !selecteds.length) return;
@@ -95,5 +114,7 @@
         if (!selecteds || !selecteds.length) return;
         box2.addItems(selecteds);
         box1.removeItems(selecteds);
-    }</script>
+    }
+
+</script>
 </html>

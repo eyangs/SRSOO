@@ -19,7 +19,7 @@ public partial class Login : System.Web.UI.Page
             string password = Request.GetStringValueInForm("password");
             string message;
             User user = UserService.UserLogin(userName, password, out message);
-            if (user!=null)
+            if (user != null)
             {
                 Session["CurrentUser"] = user;
                 jsonResult = JSONHelper.GetJsonForSuccess();
@@ -32,5 +32,5 @@ public partial class Login : System.Web.UI.Page
             Response.End();
         }
     }
-   
+
 }
