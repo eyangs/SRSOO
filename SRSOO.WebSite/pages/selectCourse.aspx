@@ -26,7 +26,7 @@
         <div class="fields">
             <input data-type="text" data-label="StudentName" data-name="StudentName" validate="{required:true,minlength:5}" />
             <input data-type="text" data-label="ID Number" data-name="ID" validate="{required:true}" />
-            <input data-type="text" data-label="Total Course" data-name="TotalCourse" validate="{required:false}" />
+            <input data-type="text" data-label="TotalCourse" data-name="TotalCourse" validate="{required:false}" />
         </div>
         <div>
             <div style="margin: 4px; float: left;">
@@ -82,6 +82,8 @@
                 $.ligerui.get("ID").setValue(json.Id);
                 $.ligerui.get("StudentName").setValue(json.Name);
                 liger.get("listbox2").setData(json.Attends);
+                var obj = json.Attends;
+
             }
         );
     }
@@ -96,6 +98,12 @@
     function moveToRight() {
         var box1 = liger.get("listbox1"), box2 = liger.get("listbox2");
         var selecteds = box1.getSelectedItems();
+
+
+        
+
+
+
         if (!selecteds || !selecteds.length) return;
         box1.removeItems(selecteds);
         box2.addItems(selecteds);

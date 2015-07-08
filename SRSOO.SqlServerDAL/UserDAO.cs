@@ -15,7 +15,7 @@ namespace SRSOO.SqlServerDAL
     {
         public static string ConStr
         {
-            get { return @"Data Source=(localdb)\ProjectsV12;Initial Catalog=srsoo;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False"; }
+            get { return @"Data Source=(localdb)\Projects;Initial Catalog=mmm;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False"; }
         }
 
         public static SqlConnection Connection

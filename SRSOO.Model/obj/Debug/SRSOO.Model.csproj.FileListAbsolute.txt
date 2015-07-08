@@ -16,3 +16,4 @@ D:\work\SRSOO\SRSOO.Model\bin\Debug\SRSOO.Model.pdb
 D:\work\SRSOO\SRSOO.Model\obj\Debug\SRSOO.Model.csprojResolveAssemblyReference.cache
 D:\work\SRSOO\SRSOO.Model\obj\Debug\SRSOO.Model.dll
 D:\work\SRSOO\SRSOO.Model\obj\Debug\SRSOO.Model.pdb
+F:\srsoo\SRSOO.Model\obj\Debug\SRSOO.Model.csprojResolveAssemblyReference.cache

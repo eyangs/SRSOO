@@ -11,15 +11,21 @@ public partial class pages_selectCourse : WebBasePage//WebBasePage为自己建�
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        //若未登录，跳转至登录
+        if (Session["CurrentUser"] == null)
+        { 
+            Response.Redirect("../Login.aspx");
+        }
+       
+        
         if (Request.Params["Action"].ConvertToString() == "LoadSchedule")//ConvertToString为自己建立的扩展方法 可将对象转化为字符串
         {
             var schedule = ScheduleService.LoadSchedule("SP2009");
             var q = from item in schedule.GetSortedSections()
                 select new
                 {
-                    id = item.RepresentedCourse.CourseNumber,
-                    text = "{0} {1} {2}".FormatWith(item.RepresentedCourse.CourseName, item.TimeOfDay,item.Room)
+                    id = item.SectionNumber,
+                    text = "{0} {1} {2} {3} ".FormatWith(item.RepresentedCourse.CourseNumber,item.RepresentedCourse.CourseName, item.TimeOfDay, item.Room)
                 };
             string jsonResult = JSONHelper.ToJson(q.ToList());
 
@@ -35,7 +41,7 @@ public partial class pages_selectCourse : WebBasePage//WebBasePage为自己建�
                     select new
                     {
                         id = s.SectionNumber,
-                        text = "{0} {1}".FormatWith(s.RepresentedCourse.CourseName,s.TimeOfDay,s.Room)
+                        text = "{0} {1} {2}".FormatWith(s.RepresentedCourse.CourseNumber,s.RepresentedCourse.CourseName, s.TimeOfDay, s.Room)
                     };
             var stuView = new {
                 Id=stu.Id,
