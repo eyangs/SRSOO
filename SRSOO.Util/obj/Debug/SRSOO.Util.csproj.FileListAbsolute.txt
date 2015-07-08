@@ -39,3 +39,10 @@ C:\Users\hp\Desktop\SRSOO-master\SRSOO.Util\bin\Debug\Newtonsoft.Json.xml
 C:\Users\hp\Desktop\SRSOO-master\SRSOO.Util\obj\Debug\SRSOO.Util.csprojResolveAssemblyReference.cache
 C:\Users\hp\Desktop\SRSOO-master\SRSOO.Util\obj\Debug\SRSOO.Util.dll
 C:\Users\hp\Desktop\SRSOO-master\SRSOO.Util\obj\Debug\SRSOO.Util.pdb
+D:\git\SRSOO.Util\bin\Debug\SRSOO.Util.dll
+D:\git\SRSOO.Util\bin\Debug\SRSOO.Util.pdb
+D:\git\SRSOO.Util\bin\Debug\Newtonsoft.Json.dll
+D:\git\SRSOO.Util\bin\Debug\Newtonsoft.Json.xml
+D:\git\SRSOO.Util\obj\Debug\SRSOO.Util.csprojResolveAssemblyReference.cache
+D:\git\SRSOO.Util\obj\Debug\SRSOO.Util.dll
+D:\git\SRSOO.Util\obj\Debug\SRSOO.Util.pdb
