@@ -26,7 +26,7 @@
 </head>
 <body>
  <div id="uldiv" style="display: none;">
-        <form id="ulform" class="fid" method="post" action="">
+        <form id="ulform" class="fid" method="post" action =( )>
             <table>
                 <tr>
                     <td style="width: 80px;">用户名&nbsp;(<span class="required">*</span>):</td>
@@ -42,45 +42,45 @@
 </body>
 <script type="text/javascript">
 
-        $(document).ready(function () {
-            login();
-        });
+    $(document).ready(function () {
+        login();
+    });
 
-        function login() {
-            var d = $.ligerDialog.open(
-                {
-                    target: $("#uldiv"),
-                    title: "登录",
-                    width: 350,
-                    height: 180,
-                    buttons: [
-                        {
-                            text: "登录",
-                            onclick: function () {
-                                if (!$("#username").val() || !$("#password").val()) {
-                                    alert("请输入“用户名”和“密码”登录系统！");
-                                    return;
-                                }
-                                $.post(
-                                    "Login.aspx?Action=Login",
-                                    { username: $("#username").val(), password: $("#password").val() },
-                                    function (reslut) {
-                                        var data = $.parseJSON(reslut);
-                                        if (data) {
-                                            if (data.success) {
-                                                document.location.href = "index.aspx";
-                                            }
-                                            else {
-                                                alert(data.message);
-                                            }
+    function login() {
+        var d = $.ligerDialog.open(
+            {
+                target: $("#uldiv"),
+                title: "登录",
+                width: 350,
+                height: 180,
+                buttons: [
+                    {
+                        text: "登录",
+                        onclick: function () {
+                            if (!$("#username").val() || !$("#password").val()) {
+                                alert("请输入“用户名”和“密码”登录系统！");
+                                return;
+                            }
+                            $.post(
+                                "Login.aspx?Action=Login",
+                                { username: $("#username").val(), password: $("#password").val() },
+                                function (reslut) {
+                                    var data = $.parseJSON(reslut);
+                                    if (data) {
+                                        if (data.success) {
+                                            document.location.href = "index.aspx";
+                                        }
+                                        else {
+                                            alert(data.message);
                                         }
                                     }
-                                );
-                            }
+                                }
+                            );
                         }
-                    ]
-                }
-            );
-        }
+                    }
+                ]
+            }
+        );
+    }
     </script>
 </html>
