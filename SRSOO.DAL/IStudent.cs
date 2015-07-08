@@ -5,9 +5,12 @@ using System.Text;
 
 namespace SRSOO.IDAL
 {
-    
-    interface IPerson
-    {
 
+
+    public interface IStudent
+    {
+        Student GetStudent(string id);
     }
+
+
 }

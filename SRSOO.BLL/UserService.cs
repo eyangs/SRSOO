@@ -17,7 +17,7 @@ namespace SRSOO.BLL
             {
                 message = "用户名不存在";
             }
-            else if (user.PassWord !=passWord)
+            else if (user.PassWord != passWord)
             {
                 message = "用户密码不正确";
             }
