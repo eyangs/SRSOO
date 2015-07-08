@@ -7,11 +7,12 @@ using System.Web.UI.WebControls;
 using SRSOO.BLL;
 using SRSOO.Util;
 using SRSOO.Util.Extension;
-public partial class pages_selectCourse : WebBasePage//基类
+public partial class pages_selectCourse : WebBasePage//WebBasePage为自己建立的类（界面基类 含公用方法等），此处继承
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Request.Params["Action"].ConvertToString() == "LoadSchedule")//把paramstring和form合并。
+
+        if (Request.Params["Action"].ConvertToString() == "LoadSchedule")//ConvertToString为自己建立的扩展方法 可将对象转化为字符串
         {
             var schedule = ScheduleService.LoadSchedule("SP2009");
             var q = from item in schedule.GetSortedSections()
@@ -25,26 +26,38 @@ public partial class pages_selectCourse : WebBasePage//基类
             Response.Write(jsonResult);
             Response.End();
         }
-        else if(Request.Params["Action"].ConvertToString() == "LoadStudenInfo")
+        else if (Request.Params["Action"].ConvertToString() == "LoadStudentInfo")
         {
-            //User u = Session["CurrentUser"] as user;
             var stu = StudentService.LoadStudentInfo(CurrentUser.RelatedPerson);
-            //生成viewModel
+            //生成viewmodel
             //匿名对象new{}
             var q = from s in stu.Attends
                     select new
                     {
                         id = s.SectionNumber,
-                        text = "{0} {1}".FormatWith(s.RepresentedCourse.CourseName, s.TimeOfDay, s.Room)
+                        text = "{0} {1}".FormatWith(s.RepresentedCourse.CourseName,s.TimeOfDay,s.Room)
                     };
             var stuView = new {
-                Id = stu.Id,
-                Name = stu.Name,
+                Id=stu.Id,
+                Name=stu.Name,
                 Attends=q.ToList()
-            };
-            string jsonRsult=JSONHelper.ToJson(stuView);
-            Response.Write(jsonRsult);
+            };            
+            string jsonResult = JSONHelper.ToJson(stuView);
+            Response.Write(jsonResult );
             Response.End();
         }
+
+
+
+
+
+
+
     }
+
+
+
+
+
+
 }

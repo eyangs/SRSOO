@@ -8,30 +8,31 @@ using SRSOO.IDAL;
 using SRSOO.Util.Data;
 using SRSOO.Util.Extension;
 
+
 namespace SRSOO.SqlServerDAL
 {
-    
-   public class SectionDAO:DataBase,ISection
+    class SectionDAO:DataBase,ISection
     {
         public Section GetSection(int sectionNumber)
         {
-            //应该从数据库读取section数据
             string sql = "select * from Section where SectionNumber={0}".FormatWith(sectionNumber);
             SqlDataReader dr = SqlHelper.ExecuteReader(ConStr, CommandType.Text, sql);
             if (dr.HasRows == false) return null;
             dr.Read();
-            var courseDao = new CousrseDAO();
+            var courseDao = new CourseDAO();
             var sec = new Section(dr["SectionNumber"].ConvertToIntBaseZero(),
                                   dr["DayOfWeek"].ToString(),
                                   dr["TimeOfDay"].ToString(),
                                   courseDao.GetCourse(dr["RepresentedCourse"].ConvertToString()),
                                   dr["Room"].ToString(),
-                                  dr["Capacity"].ConvertToIntBaseZero());
+                                  dr["SeatingCapacity"].ConvertToIntBaseZero());
             dr.Close();
             dr.Dispose();
 
             return sec;
         }
+
+
         public void Insert(Section section)
         {
             throw new NotImplementedException();
@@ -46,6 +47,5 @@ namespace SRSOO.SqlServerDAL
         {
             throw new NotImplementedException();
         }
-       
     }
 }

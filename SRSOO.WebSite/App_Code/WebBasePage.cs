@@ -7,20 +7,22 @@ using System.Web.UI.WebControls;
 
 public class WebBasePage: System.Web.UI.Page
 {
-    public User CurrentUser//用CurrentUser得到session
+    public User CurrentUser
     {
         get
         {
-          
             if (Session["CurrentUser"] == null)
             {
-                //转到登录页面
-                return null;
+                //转回登录
+                Response.Redirect("../Login.aspx");
+                return null ;
+
             }
-            else
+            else 
             {
                 return Session["CurrentUser"] as User;
             }
+            
         }
     }
 }
