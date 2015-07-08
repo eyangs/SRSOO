@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Reflection;
 
+
 namespace SRSOO.IDAL
 {
     public class DataAccess
@@ -26,5 +27,15 @@ namespace SRSOO.IDAL
             string className = AssemblyName + "." + "ScheduleDAO";
             return (ISchedule)Assembly.Load(AssemblyName).CreateInstance(className);
         }
+        public static IStudent CreateStudentDAO()
+        {
+            string className = AssemblyName + "." + "StudentDAO";
+            return (IStudent)Assembly.Load(AssemblyName).CreateInstance(className);
+        }
+      //  public static ISection CreateSectionDAO()
+      //  {
+        //    string className = AssemblyName + "." + "SectionDAO";
+         //   return (ISection)Assembly.Load(AssemblyName).CreateInstance(className);
+      //  }
     }
 }
