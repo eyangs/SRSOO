@@ -20,3 +20,4 @@ G:\SRSOO\SRSOO.Model\bin\Debug\SRSOO.Model.dll
 G:\SRSOO\SRSOO.Model\bin\Debug\SRSOO.Model.pdb
 G:\SRSOO\SRSOO.Model\obj\Debug\SRSOO.Model.dll
 G:\SRSOO\SRSOO.Model\obj\Debug\SRSOO.Model.pdb
+G:\SRSOO\SRSOO.Model\obj\Debug\SRSOO.Model.csprojResolveAssemblyReference.cache

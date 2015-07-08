@@ -14,8 +14,8 @@ public partial class pages_selectCourse : WebBasePage
     public string user_name = "";
     protected void Page_Load(object sender, EventArgs e)
     {
-        //User user = (User)Session["CurrentUser"];
-        //user_name = user.UserName;
+        User user = (User)Session["CurrentUser"];
+        user_name = user.UserName;
         if (Request.Params["Action"].ConvertToString() == "loadStudentInfo")
         {
             var stu = StudentService.LoadStudentInfo(CurrentUser.RelatedPerson);
@@ -53,6 +53,30 @@ public partial class pages_selectCourse : WebBasePage
             Response.Write(jsonResult);
             Response.End();
 
+        }
+        else if (Request.Params["Action"].ConvertToString() == "loadResigistion")
+        {
+            var stu = StudentService.LoadStudentInfo(CurrentUser.RelatedPerson);
+            var q = from s in stu.Attends
+                    select new
+                    {
+                        id = s.SectionNumber,
+                        text = "{0} {1}".FormatWith(s.RepresentedCourse.CourseName, s.TimeOfDay, s.Room)
+
+
+                    };
+            var stuView = new
+            {
+                
+                Attends = q.ToList()
+
+
+            };
+            string jsonResult = JSONHelper.ToJson(stuView);
+            Response.Write(jsonResult);
+            Response.End();
+        
+        
         }
 
        

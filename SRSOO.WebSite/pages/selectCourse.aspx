@@ -73,7 +73,14 @@
     }
     //从服务器加载当前登陆学生已选课程
     function loadResigistion() {
+        $.post(
+            "selectCourse.aspx?Action=loadResigistion",
+            function (reslut) {
+                var json = $.parseJSON(reslut);
+                liger.get("listbox2").setData(json.Attends);
 
+            }
+        );
 
     }
     function loadStudentInfo() {
@@ -86,7 +93,7 @@
                $.ligerui.g("ID").setValue(json.Id);
                $.ligerui.g("StudentName").setValue(json.Name);
                
-               liger.get("listbox2").setData(json.Attends);
+               
            }
 
 
