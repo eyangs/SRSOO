@@ -10,35 +10,37 @@ using SRSOO.Util.Extension;
 
 namespace SRSOO.SqlServerDAL
 {
-    
+
     public class DataBase
     {
         public static string ConStr
         {
-            get { return @"Data Source=.\SQLEXPRESS2008;Initial Catalog=SRSDB;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=False"; }
+            get { return @"Data Source=(localdb)\ProjectsV12;Initial Catalog=srsoo;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False"; }
+
         }
 
         public static SqlConnection Connection
         {
-            get { return new SqlConnection(ConStr);}
+            get { return new SqlConnection(ConStr); }
         }
     }
-    
-    
-    
-    public class UserDAO: DataBase, IUser
+
+
+
+    public class UserDAO : DataBase, IUser
     {
         public void Insert(User user)
         {
             throw new NotImplementedException();
-            
+
         }
 
         public User GetUser(int id)
         {
             throw new NotImplementedException();
-        }
 
+        }
+        //注释
         public User GetUser(string userName)
         {
             string sql = "select * from [User] where UserName='{0}'".FormatWith(userName.Trim());
@@ -48,6 +50,7 @@ namespace SRSOO.SqlServerDAL
             User user = new User();
             user.UserName = dr["UserName"].ToString();
             user.PassWord = dr["Password"].ToString();
+            user.RelatedPerson = dr["RelatedPerson"].ToString();
             dr.Close();
             dr.Dispose();
             return user;
